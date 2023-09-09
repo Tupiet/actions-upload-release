@@ -1,0 +1,12 @@
+name: Put code in Releases
+on: push
+jobs: 
+    release-project:
+        name: Release code in releases
+        runs-on: ubuntu-latest
+        steps:
+            - name: Upload to artifacts
+              uses: actions/upload-artifact@v2
+              with:
+                name: files
+                path: index.html
