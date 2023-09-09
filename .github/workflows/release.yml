@@ -4,10 +4,14 @@ jobs:
     release-project:
         name: Release code in releases
         runs-on: ubuntu-latest
-        steps:
-            - uses: actions/checkout@v2
+        steps: 
+            # Permet que s'utilitzi el repositori actual
+            - uses: actions/checkout@v2 
+            # Penjem tots els arxius als artifacs
             - name: Upload to artifacts
               uses: actions/upload-artifact@v2
               with:
                 name: files
-                path: ./
+                path: |
+                  ./
+                  !.github/
