@@ -4,6 +4,8 @@ jobs:
     release-project:
         name: Release code in releases
         runs-on: ubuntu-latest
+        permissions:
+            contents: write
         steps: 
             # Permet que s'utilitzi el repositori actual
             - uses: actions/checkout@v2 
