@@ -15,3 +15,19 @@ jobs:
                 path: |
                   ./
                   !.github/
+            - name: Download from artifacts
+              uses: actions/download-artifact@v2
+              with:
+                name: files
+            - name: Compress files
+              uses: thedoctor0/zip-release@0.7.1
+              with:
+                filename: files.zip
+            - name: Create GitHub Release
+              uses: marvinpinto/action-automatic-releases@latest
+              with:
+                repo_token: "${{ secrets.GITHUB_TOKEN }}"
+                automatic_release_tag: "latest"
+                prerelease: true
+                title: Release V$ff github.run_number }}
+                files: files.zip
