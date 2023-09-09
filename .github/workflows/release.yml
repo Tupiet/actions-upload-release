@@ -5,6 +5,7 @@ jobs:
         name: Release code in releases
         runs-on: ubuntu-latest
         steps:
+            - uses: actions/checkout@v2
             - name: Upload to artifacts
               uses: actions/upload-artifact@v2
               with:
