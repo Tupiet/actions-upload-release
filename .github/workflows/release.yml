@@ -33,5 +33,5 @@ jobs:
                 repo_token: "${{ secrets.GITHUB_TOKEN }}"
                 automatic_release_tag: "latest"
                 prerelease: true
-                title: Release V$ff github.run_number }}
+                title: Release V${{ github.run_number }}
                 files: files.zip
