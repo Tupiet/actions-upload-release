@@ -9,22 +9,24 @@ jobs:
         steps: 
             # Permet que s'utilitzi el repositori actual
             - uses: actions/checkout@v2 
-            # Penjem tots els arxius als artifacs
-            - name: Upload to artifacts
-              uses: actions/upload-artifact@v2
-              with:
-                name: files
-                path: |
-                  ./
-                  !.github/
-            - name: Download from artifacts
-              uses: actions/download-artifact@v2
-              with:
-                name: files
+            # # Penjem tots els arxius als artifacs
+            # - name: Upload to artifacts
+            #   uses: actions/upload-artifact@v2
+            #   with:
+            #     name: files
+            #     path: |
+            #       ./
+            #       !.github/
+            # - name: Download from artifacts
+            #   uses: actions/download-artifact@v2
+            #   with:
+            #     name: files
             - name: Compress files
               uses: thedoctor0/zip-release@0.7.1
               with:
+                type: zip
                 filename: files.zip
+                exclusions: '*.git*'
             - name: Create GitHub Release
               uses: marvinpinto/action-automatic-releases@latest
               with:
