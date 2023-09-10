@@ -15,7 +15,7 @@ jobs:
               with:
                 type: zip
                 filename: files.zip
-                exclusions: '*.git* sass'
+                exclusions: '*.git* */sass'
             # Penja'l al GitHub Release
             - name: Create GitHub Release
               uses: marvinpinto/action-automatic-releases@latest
