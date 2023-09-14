@@ -34,5 +34,4 @@ jobs:
                 passphrase: ${{ secrets.PASSPHRASE }}
                 port: ${{ secrets.PORT }}
                 script: |
-                  echo 'Hello ${{ github.run_number }}' >> hola.txt
-                  update-escri.sh
+                  ~/bin/update-escri.sh
